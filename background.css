@@ -7,18 +7,57 @@
        background-color: black;
        color: white;
        padding: 20px;
-       width: 250px;
+       width: 300px;
        font-size: 14px;
        font-family:'JetBrains Mono', mono;
        display: flex;
    }
+
+.links {
+        background-color: black;
+        color: white;
+        padding: 20px;
+        width: 250px;
+        font-size: 14px;
+        font-family:'JetBrains Mono', mono;
+        justify-self: center;
+   }
    
    .space {
-       display: flex;
-       justify-content: space-between;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px;
+        font-size: 14px;
+        font-family:'JetBrains Mono', mono;
    }
 
    .center { 
        margin:auto;
        padding-left: 4px;
    }
+
+.case {
+    display: flex;
+}
+
+.case img{
+    padding: 6px;
+    margin: 6px;
+
+}
+
+.save { 
+    justify-items: center;
+    margin: auto;
+    width: 40%;
+    align-items: center;
+}
+
+.save button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-family:'JetBrains Mono', mono;
+    border: slategray solid 1px;
+    border-radius: 6px;
+}

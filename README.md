@@ -12,3 +12,11 @@ How to load this extension:
 ![img](./icons/delta.png)
 
 
+
+
+TODO
+
+1. Shorten links with www.
+2. Tab groups
+3. Archive 
+4. Download
