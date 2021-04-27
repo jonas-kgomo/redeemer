@@ -1,6 +1,12 @@
-// chrome.runtime.onInstalled.addListener( async () => {
+chrome.runtime.onInstalled.addListener( async () => {
+    chrome.tabGroups.query(query, (tabs) => {
+        groupTags.innerHTML = tabs.map( e => { return `<div>${e.groupId}</div>`;})
+    });
 
-// });
+//      chrome.tabs.query({windowType:'normal'}, function(tabs) {
+//      document.getElementById('group') = "WWW : " + tabs.length ;
+//  }); 
+ });
 
 document.addEventListener('DOMContentLoaded', () => {
     const dialogBox = document.getElementById('demo');
@@ -21,9 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
  //    saveList.addEventListener('click', () => saveTabs(JSON.stringify({Total: tabs.length, Tabs: {...tabs.map(e=> e.url)}}), "data.json"));    
-    chrome.tabGroups.query(query, (tabs) => {
-        groupTags.innerHTML = tabs.map( e => { return `<div>${e.groupId}</div>`;})
-    });
+
 
      chrome.tabs.query(query, (tabs) => {
         dialogBox.innerHTML = "Total Tabs : " + tabs.length ;
