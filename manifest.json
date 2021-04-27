@@ -1,14 +1,14 @@
 {
  "manifest_version": 2,
  "name": "Redeemer",
- "version": "1.0.0",
+ "version": "1.1.0",
  "description": "Download all your active browser sessions",
  "short_name": "Redeem",
  "permissions": ["activeTab", "declarativeContent", "storage", "tabs", "<all_urls>"],
  "content_scripts": [
    {
      "matches": ["<all_urls>"],
-    //  "css": ["background.css"],
+     "css": ["background.css"],
      "js": ["background.js"]
    }
  ],

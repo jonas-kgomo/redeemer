@@ -1,24 +1,17 @@
-chrome.runtime.onInstalled.addListener(async () => {
+chrome.runtime.onInstalled.addListener( async () => {
 
   // While we could have used `let url = "hello.html"`, using runtime.getURL is a bit more robust as
   // it returns a full URL rather than just a path that Chrome needs to be resolved contextually at
   // runtime.
-  let url = chrome.runtime.getURL("popup.html");
+ let url = chrome.runtime.getURL("popup.html");
 
-  // Open a new tab pointing at our page's URL using JavaScript's object initializer shorthand.
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#new_notations_in_ecmascript_2015
-  //
-  // Many of the extension platform's APIs are asynchronous and can either take a callback argument
-  // or return a promise. Since we're inside an async function, we can await the resolution of the
-  // promise returned by the tabs.create call. See the following link for more info on async/await.
-  // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await
-  let tab = await chrome.tabs.create({ url });
+ let tab = await chrome.tabs.create({ url });
 
+  chrome.tabs.query({windowType:'normal'}, function(tabs) {
+     console.log('Number of open tabs in all normal browser windows:',tabs.length);
+ }); 
 
-// chrome.tabs.query({windowType:'normal'}, function(tabs) {
-//     console.log('Number of open tabs in all normal browser windows:',tabs.length);
-// }); 
-
+ document.getElementById("demo").innerHTML = "tabs";
 
 
   // Finally, let's log the ID of the newly created tab using a template literal.
@@ -28,3 +21,33 @@ chrome.runtime.onInstalled.addListener(async () => {
   // "service worker" link in th card to open DevTools.
   console.log(`Created tab ${tab.id}`);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const dialogBox = document.getElementById('demo');
+    const dialogList = document.getElementById('list');
+    //const query = { active: true, currentWindow: true };
+ //   const tabItems = tabs.map(e => { return `<li> + ${e.title} + </li>`;});
+
+    const query = {windowType:'normal'};
+
+    chrome.tabs.query(query, (tabs) => {
+        dialogBox.innerHTML = "Total: " + tabs.length ;
+        dialogList.innerHTML = "List"+ tabs.map( e => { return `<div display="block"> + ${e.title} + </div>`;});
+        //"List" + tabs[0].title;
+    });
+});
+
+
+
+// function readMe(){
+//   document.body.style.backgroundColor = 'red';
+
+// }
+
+// chrome.action.onClicked.addListener((tab) =>  {
+//   chrome.scripting.executeScript({
+//     target: { tabId: tab.id }, 
+//     function: readMe 
+//   });
+// });
+
