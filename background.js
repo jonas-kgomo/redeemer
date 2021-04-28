@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const groupTags = document.getElementById('group');
 //  const data = { totalTabs: dialogBox.innerText, savedTabs: dialogList.innerHTML};
     const saveList = document.getElementById('save');
-   // const blob = new Blob([JSON.stringify(dialogList)], {type: "text/plain;charset=utf-8"});  
-
-  // access to other windows
+    const date = new Date().getDate().toString();
+    const month = new Date().getMonth().toString();
+    // access to other windows
   const query = {windowType:'normal'};
   // gets json fillers
   function saveTabs(text, filename){
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         saveList.addEventListener('click', () => saveTabs(JSON.stringify(
           {Total: tabs.length, 
            Tabs:  [...tabs.map( e =>  ({url: e.url, title: e.title}))]
-          }, null, ' '), "data.json"));
+          }, null, ' '), "re-" + date + "-" + month +  ".json"));
   
  
       });
