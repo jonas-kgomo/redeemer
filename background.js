@@ -1,17 +1,13 @@
 chrome.runtime.onInstalled.addListener( async () => {
+    const groupTags = document.getElementById('group');
     chrome.tabGroups.query(query, (tabs) => {
         groupTags.innerHTML = tabs.map( e => { return `<div>${e.groupId}</div>`;})
     });
-
-//      chrome.tabs.query({windowType:'normal'}, function(tabs) {
-//      document.getElementById('group') = "WWW : " + tabs.length ;
-//  }); 
  });
 
 document.addEventListener('DOMContentLoaded', () => {
     const dialogBox = document.getElementById('demo');
     const dialogList = document.getElementById('list'); 
-    const groupTags = document.getElementById('group');
 //  const data = { totalTabs: dialogBox.innerText, savedTabs: dialogList.innerHTML};
     const saveList = document.getElementById('save');
     const date = new Date().getDate().toString();

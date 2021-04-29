@@ -9,7 +9,7 @@ How to load this extension:
 2. Enable Developer Mode by clicking the toggle switch next to Developer mode.
 3. Click the Load unpacked button and select the extension directory.
 
-![img](./icons/delta.png)
+![img](./icons/demo.png)
 
 
 
