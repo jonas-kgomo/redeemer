@@ -51,6 +51,8 @@
     margin: auto;
     width: 40%;
     align-items: center;
+    display: flex;
+    padding: 4px;
 }
 
 .save button {
