@@ -51,7 +51,7 @@
     margin: auto;
     width: 40%;
     align-items: center;
-    display: flex;
+    display: block;
     padding: 4px;
 }
 
@@ -60,6 +60,15 @@
     color: white;
     padding: 10px;
     font-family:'JetBrains Mono', mono;
+    border: slategray solid 1px;
+    border-radius: 6px;
+}
+
+.save input {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-family: 'JetBrains Mono', mono;
     border: slategray solid 1px;
     border-radius: 6px;
 }

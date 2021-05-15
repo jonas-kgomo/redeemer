@@ -16,7 +16,8 @@ How to load this extension:
 
 TODO
 
-1. Shorten links with www.
-2. Tab groups
+1. Shorten links with www. 
+2. Tab groups 
 3. Archive 
 4. Download
+✔ Upload `N` links
