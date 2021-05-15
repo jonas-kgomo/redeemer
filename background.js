@@ -41,14 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
       var arr = Object.values(JSON.parse(re));
       // convert second object Tabs to array
       var total = arr[0];
-      var tabsarr = Object.values(arr[1]);
+      var tabsarr = arr[1];
 
-      for (var i = 0; i < total; i++) {
-        chrome.tabs.create({ url: tabsarr[i] }, function () {
-          saveLinks.innerHTML = "You currently have " + tabsarr[i];
-        });
-      }
-      // alert(total);
+       for (var i = 0; i < total; i++) {
+         chrome.tabs.create({ url: Object.values(tabsarr[i])[0] }, function () {
+           saveLinks.innerHTML = "You currently have " + tabsarr[i];
+         });
+       
+       }
+    //  alert(tabsarr);
     };
     reader.readAsText(files[0]);
   }

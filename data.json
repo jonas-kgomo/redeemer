@@ -1,4 +1,14 @@
-{"Total":2,
-  "Tabs":
-  {"0":"https://supabase.io/","1":"https://www.google.com/chrome/"}
+{
+ "Total": 2,
+ "Tabs": [
+
+  {
+   "url": "https://www.google.com/chrome/",
+   "title": "Chrome"
+  },
+  {
+   "url": "https://www.youtube.com",
+   "title": "Youtube"
+  }
+  ]
 }

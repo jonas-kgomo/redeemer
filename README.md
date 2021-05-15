@@ -17,8 +17,10 @@
 
 ```json
 {"Total":2,
-  "Tabs":
-  {"0":"https://example.com/link/1","1":"https://www.example.com/link/2/"}
+  "Tabs":[
+    {"url":"https://example.com/link/1", "title": "Title 1" }, 
+    { "1":"https://www.example.com/link/2/", "title": "Title 2",}
+    ]
 }
 ```
 
